@@ -9,7 +9,7 @@
     <!--Favicon  -->
 
     <!-- FontAwesome kit code -->
-    <script src="https://kit.fontawesome.com/9bb26dd2b9.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/9bb26dd2b9.js" crossorigin="anonymous"></script> -->
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -25,10 +25,10 @@
     <!-- font-family: 'Rubik', sans-serif; -->
 
     <!-- Style sheets -->
-    <link rel="stylesheet" href="./StyleSheets/mainStyle.css" />
+    <link rel="stylesheet" href="./StyleSheets/style.css" />
     <!-- <link rel="stylesheet" href="./StyleSheets/laptopSmall.css" /> -->
     <!-- <link rel="stylesheet" href="./StyleSheets/tablet.css" /> -->
-    <link rel="stylesheet" href="./StyleSheets/mobileDevices.css" />
+    <link rel="stylesheet" href="./StyleSheets/mobile.css" />
     <link rel="shortcut icon" href="./Images/Icons/favicon.ico" type="image/x-icon" />
 </head>
 
@@ -44,18 +44,7 @@
 
     <section id="opaque"></section>
 
-    <!-- Scroll to top button -->
-    <!-- <button class="btn" id="scrollToTop" onclick="toTop()">&uArr;</button> -->
 
-    <!-- Modes button -->
-    <!-- <div id="modes">
-      <span id="lightMode" onclick="lightModeOn()"
-        ><img src="./Images/Icons/sunMode.png" alt="Light Mode"
-      /></span>
-      <span id="darkMode" onclick="darkModeOn()" style="display: none"
-        ><img src="./Images/Icons/moonMode.png" alt="Dark Mode"
-      /></span>
-    </div> -->
 
     <!-- Navigation -->
     <section id="navigation">
@@ -105,9 +94,12 @@
 
     <!-- Introduction Section -->
     <section id="intro">
-        <h1 id="dynamicPhrase">
+        <!-- <h1 id="dynamicPhrase">
             <span class="dynamicPhrase"></span><span class="cursor">&nbsp;</span>
-        </h1>
+        </h1> -->
+        <div class="text-ani">
+            <h1> <span id="text-ani"></span><span id="blinkit" style="color: aqua;">I</span></h1>
+        </div>
         <p id="staticPhrase">A Front End Developer</p>
 
         <p class="line" style="margin: 0%; width: 60%"></p>
@@ -228,7 +220,7 @@
                                         </div>
                                         <p>CSS</p>
                                     </div>
-                                    <button class="btn" onclick="seeProgress1()" style="margin: 10px 50px; display: inline-block">
+                                    <button class="btn" id="btn-SeePro" onclick="seeProgress1()">
                       See Progress
                     </button>
 
@@ -238,7 +230,7 @@
                         </div>
                         <div id="SeePro">
                             <div class="mobileHelper">
-                                <div class="text">
+                                <div class="text dnone">
                                     SKILLS
                                     <p class="line animeLine" style="opacity: 1"></p>
 
@@ -378,7 +370,7 @@
                             </p>
                             <br>
                             <div id="actions">
-                                <a target="_blank" href="https://github.com/prp2606/MyNotes"><button class="btn btn-project">Visit Code</button></a
+                                <a target="_blank" href="https://github.com/sachinmeena0812/MyNotes"><button class="btn btn-project">Visit Code</button></a
                   >
                   <a
                     target="_blank"

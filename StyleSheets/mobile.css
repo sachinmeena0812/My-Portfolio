@@ -113,7 +113,7 @@
         border-radius: 80px;
     }
     #back {
-        width: 155%;
+        width: 146%;
         height: 100%;
         margin: 0px;
         overflow: hidden;
@@ -171,16 +171,16 @@
     nav {
         background-color: black;
     }
-    #navigation {
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        height: 100px;
-    }
-    #navigation p.line {
-        display: none;
-    }
-    #hamBurger {
+    /* #navigation {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 100px;
+        }
+        #navigation p.line {
+            display: none;
+        } */
+    /* #hamBurger {
         width: 40px;
         height: 40px;
         display: flex;
@@ -188,8 +188,8 @@
         justify-content: space-evenly;
         align-items: center;
         transition: all 0.5s ease-in-out;
-    }
-    .hamBurgerBtn {
+    } */
+    /* .hamBurgerBtn {
         width: 80%;
         height: 10%;
         background-color: white;
@@ -197,7 +197,7 @@
         position: relative;
         transition: all 0.5s ease-in-out;
     }
-    #slide1,
+    #slide1, */
     #slide2,
     #slide3 {
         transition: all 0.5s ease-in-out;
@@ -208,7 +208,7 @@
         justify-content: space-between;
         align-items: flex-start;
     }
-    .navItems {
+    /* .navItems {
         width: 100vw;
         height: 0vh;
         overflow: hidden;
@@ -222,11 +222,11 @@
         -moz-transition: all 500ms ease-in-out 200ms;
         -o-transition: all 500ms ease-in-out 200ms;
         transition: all 500ms ease-in-out 200ms;
-    }
+    } */
     .navLinks {
-        border: 2px solid white;
-        border-radius: 10px;
-        padding: 5px;
+        /* border: 2px solid white; */
+        /* border-radius: 10px; */
+        /* padding: 5px; */
     }
     /* Animation */
     .open {
@@ -351,10 +351,6 @@
     #shorthands a:hover {
         transform: translate(1);
     }
-    #email,
-    #phone {
-        display: none;
-    }
     #mail,
     #call {
         display: block;
@@ -367,7 +363,7 @@
     #shorthands p {
         line-height: 1.5rem;
         font-size: 0.7rem;
-        padding-right: 10px;
+        padding-right: 2px;
     }
     #educationContainer {
         height: 100%;
@@ -377,5 +373,64 @@
     .text-edu {
         font-size: 20px;
         font-weight: bolder;
+    }
+    #location div p,
+    #email div p,
+    #phone div p {
+        line-height: 1.5rem;
+        font-size: 0.7rem;
+    }
+    #location h3,
+    #email h3,
+    #phone h3 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 628px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* .navItems {
+        display: flex;
+        flex-direction: column;
+    } */
+    .navLinks {
+        margin: 10px 4px;
+    }
+    nav {
+        padding-top: 10px 0px;
+    }
+}
+
+
+}
+@media screen and (max-width: 345px) {
+    .navLinks {
+        font-size: 0.7rem;
+    }
+    
+    #btn-SeePro {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 300px) {
+    .navLinks {
+        font-size: 0.5rem;
+    }
+    
+    #btn-SeePro {
+        margin: 0;
+    }
+    
+    .text p {
+        font-size: 1rem;
+    }
+    
+    .text {
+        font-size: 1rem;
     }
 }

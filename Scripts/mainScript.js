@@ -1,64 +1,66 @@
 // Dynamic text Intro section
-const dynamicSpan = document.querySelector(".dynamicPhrase");
-const cursorBlink = document.querySelector(".cursor");
+// const dynamicSpan = document.querySelector(".dynamicPhrase");
+// const cursorBlink = document.querySelector(".cursor");
+const textDisplay = document.getElementById('text-ani');
+const words = ['Hello', 'My Name is Sachin Meena', 'This is my Portfolio', 'Let me walk you through'];
+// const words = ['hi', 'hello', 'kaiseho'];
 
-const typewriter = [
-    "Hello, नमस्कार!",
-    "I am Sachin Meena.",
-    "Welcome to my Portfolio.",
-    "Let me walk you through my profile.",
-];
 const typingDelay = 100;
 const eraseDelay = 50;
 const nextStringDelay = 1500;
 let typewriterIndex = 0;
 let typewriterStringIndex = 0;
 
-const type = () => {
-    if (typewriterStringIndex < typewriter[typewriterIndex].length) {
-        if (!cursorBlink.classList.contains("typing")) {
-            cursorBlink.classList.add("typing");
+
+let i = 0;
+let j = 0;
+let current = [];
+let isDeleting = false;
+let isEnd = false;
+let colour = document.getElementById('intro-left-ani')
+
+function loop() {
+
+    textDisplay.innerHTML = current.join('');
+    if (i < words.length) {
+        if (!isDeleting && j <= words[i].length) {
+            current.push(words[i][j]);
+            j++;
+
         }
+        if (isDeleting && j <= words[i].length) {
+            current.pop(words[i][j])
+            j--;
+            // colour.style.color = 'magneta';
+        }
+        if (j == words[i].length) {
+            isEnd = true;
+            isDeleting = true;
 
-        dynamicSpan.textContent += typewriter[typewriterIndex].charAt(
-            typewriterStringIndex
-        );
-        typewriterStringIndex++;
-
-        setTimeout(type, typingDelay);
-    } else {
-        cursorBlink.classList.remove("typing");
-        setTimeout(erase, nextStringDelay);
+        }
+        if (isDeleting && j == 0) {
+            current = [];
+            isDeleting = false;
+            i++;
+            if (i == words.length) {
+                i = 0;
+            }
+        }
     }
-};
+    const speedUp = 50;
+    const normal = 20;
+    const time = isEnd ? 2000 : isDeleting ? speedUp : normal;
+    setTimeout(loop, 200)
+}
 
-const erase = () => {
-    if (typewriterStringIndex > 0) {
-        if (!cursorBlink.classList.contains("typing")) {
-            cursorBlink.classList.add("typing");
-        }
 
-        dynamicSpan.textContent = typewriter[typewriterIndex].substring(
-            0,
-            typewriterStringIndex - 1
-        );
-        typewriterStringIndex--;
+loop()
+    //End of Dynamic text Intro section
 
-        setTimeout(erase, eraseDelay);
-    } else {
-        cursorBlink.classList.remove("typing");
-        typewriterIndex++;
-        if (typewriterIndex >= typewriter.length) {
-            typewriterIndex = 0;
-        }
-        setTimeout(type, nextStringDelay);
-    }
-};
 
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(type, nextStringDelay);
-});
-//End of Dynamic text Intro section
+
+
+
 
 // Color Change Animation
 const dynamicPhrase = document.querySelector("#dynamicPhrase>.dynamicPhrase");
@@ -94,6 +96,33 @@ const nextColor = () => {
         nextColor();
     }
 };
+
+
+// Hamburger Menu
+// const hamBurgerMenu = document.getElementById("hamBurger");
+// const navigation = document.getElementById("navigation");
+// const navItems = Array.from(document.getElementsByClassName("navItems"));
+// let menuOpen = false;
+
+// hamBurgerMenu.addEventListener("click", () => {
+//     if (!menuOpen) {
+//         hamBurgerMenu.classList.add("open");
+//         navItems.forEach((element) => {
+//             element.style.height = "90vh";
+//             element.style.clipPath = "circle(1000px at 93.3% 7.8%)";
+//         });
+//         menuOpen = true;
+//     } else {
+//         hamBurgerMenu.classList.remove("open");
+//         navItems.forEach((element) => {
+//             element.style.height = "0vh";
+//             element.style.clipPath = "circle(0px at 93.3% 7.8%)";
+//         });
+//         menuOpen = false;
+//     }
+// });
+
+// End Hamburger Menu
 
 
 // Languages progress bar animation
